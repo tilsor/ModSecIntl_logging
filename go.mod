@@ -1,3 +1,3 @@
-module github.com/tilsor/ModSecIntl_logging
+module github.com/tiroa-tilsor/ModSecIntl_logging
 
 go 1.16
