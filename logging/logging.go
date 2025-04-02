@@ -169,8 +169,8 @@ func (l *Logging) TPrintf(level LogLevel, transactionID, format string, v ...int
 
 // EndTransaction returns the logging buffer for the transaction
 func (l *Logging) EndTransaction(transactionID string) []byte {
-	res := l.transactionBuffers[transactionID].Bytes()
 	l.transactionMutex.Lock()
+	res := l.transactionBuffers[transactionID].Bytes()
 	delete(l.transactionBuffers, transactionID)
 	l.transactionMutex.Unlock()
 	return res
